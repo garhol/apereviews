@@ -1,0 +1,30 @@
+<h1 style="text-align-center">header</h1>
+<div style="width:60%; float:left; margin-right:10px;">
+    {% for r in reviews %}
+      <div class="review" style="float:left; width:300px;min-height:400px;margin:10px;padding:10px; border:1px solid grey;">
+<a href="/reviews/{{r.pk}}">
+        <h3>{{r.artist}} -  {{r.album}}</h3>
+        {% if r.album_image %}
+        <img src="{{MEDIA_URL}}{{r.album_image}}" alt="{{r.album}}" />
+        {% else %}
+         <p>noimage</p>
+        {% endif %}
+        <div class="reviewbody">{{r.review|safe|truncatechars:200}}</div>
+        <p>date: {{r.date_created}}</p>
+        <P>rating:{{r.score}}</p>
+        <p>by:{{r.reviewer}}</p>
+</a>
+    </div>
+    {% endfor %}
+</div>
+
+<div style="width:35%; float:left;">
+  <h2>Staff</h2>
+  {% for p in personnel %}
+     <div class="reviewers" style="width:100%; float:left; min-height:40px;">
+          {{ p }}
+     </div>
+  {% endfor %}
+</div>
+
+

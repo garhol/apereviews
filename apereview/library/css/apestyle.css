@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('../fonts/LeagueGothic-Regular-webfont.eot');
+    src: url('../fonts/LeagueGothic-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/LeagueGothic-Regular-webfont.woff') format('woff'),
+         url('../fonts/LeagueGothic-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/LeagueGothic-Regular-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* basic layout */
+body{
+    background:url('../img/wooden_floor_bg.jpg') top center repeat;
+}
+#header{background:#000 url('../img/apeman_holding.gif') center -411px repeat-y; min-height:110px; width:100%}
+
+/* typography  */
+h1 {font: 48px 'LeagueGothicRegular', Arial, sans-serif;letter-spacing: 0; color:#fff;}
+h2 {font: 30px 'LeagueGothicRegular', Arial, sans-serif;letter-spacing: 0; color:#cc1b21;}
+h3 {font: 25px 'LeagueGothicRegular', Arial, sans-serif;letter-spacing: 0; color:#000;}
+
+body {font-family:Minion-Pro-1, Minion-Pro-2, Georgia, "Times New Roman",Serif; font-size:16px; line-height:24px; color:#000;}
+
+a{color:#208fd5; font-weight:bold;}
+a:hover{color:#186798;}
+h1 a, h2 a, h3 a, h4 a {font-weight:normal;}
+
+
+
+
+/* temporary hacks */
+
+h1.tagline{text-align:center; margin-bottom:0px;}
+#content, #sidebar{width:70%; float:left; margin-top:0.5em;}
+#sidebar{width:30%; background:#fff;}
+#footer{clear:left;}
+#sidebar h3{border-bottom:1px solid #ddd; padding-bottom:0.5em; margin-bottom:0.5em;}
+
+.hentry{width:360px; margin-left:40px; background:#fff;float:left;}
+.hentry a {color:#}
+h2.entry-title a {color:#cc1b21;}
+#header h1 {top:-1000px; position:absolute;}
+#header ul.top-navigation{width:200px; float:left;}
+#header form {float:right;}
+

@@ -1,0 +1,22 @@
+<h1 style="text-align-center">header</h1>
+<a href="/">home</a>
+
+<div style="width:60%; float:left; margin-right:10px;">
+        <h3>{{review.artist}} -  {{review.album}}</h3>
+        <p>reviewed by:{{review.reviewer}}</p>
+        <p>date: {{review.date_created}}</p>
+
+        {% if review.album_image %}
+        <img src="{{review.album_image}}" alt="{{review.album}}" />
+        {% else %}
+         <p>noimage</p>
+        {% endif %}
+        <div class="reviewbody">{{review.review|safe}}</div>
+        <p>{{review.reviewer}} gives this a score of {{review.score}}/10</p>
+</div>
+
+<div style="width:35%; float:left;">
+  <h2>Staff</h2>
+</div>
+
+
