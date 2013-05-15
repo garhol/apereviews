@@ -9,7 +9,7 @@ def home(request):
     context = {}
      
     
-    context['reviews'] = Review.objects.all()
+    context['reviews'] = Review.objects.filter(review_status='live').order_by('-date_created')
     context['personnel'] = Personnel.objects.all()
     
     template = 'index.html'

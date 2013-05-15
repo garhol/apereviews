@@ -7,7 +7,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    # ('garhol', 'garhol@3dahoy.co.uk'),
 )
 
 MANAGERS = ADMINS
@@ -110,6 +110,15 @@ ROOT_URLCONF = 'apereview.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'apereview.wsgi.application'
 
+TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
+"django.core.context_processors.debug",
+"django.core.context_processors.i18n",
+"django.core.context_processors.media",
+"django.core.context_processors.static",
+"django.core.context_processors.tz",
+"django.core.context_processors.request",
+"django.contrib.messages.context_processors.messages")
+
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, 'templates')
 )
@@ -162,3 +171,8 @@ LOGGING = {
         },
     }
 }
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
