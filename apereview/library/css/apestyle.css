@@ -75,6 +75,11 @@ ul.nav li a:hover {background-color:#000;}
 .writers_links{margin-bottom:1.2em;}
 .writers_links img{margin-right:1em;}
 
+/* Review pages */
+.review_page{background:#fff;}
+.review_page .review_image {margin:0;}
+.review_page .review_meta {padding-left:1em; margin-top:140px; clear:left; float:left; width:40%; min-width:190px;} 
+.review_page .review_date_stamp{padding:0.5em; background:rgba(255, 255, 255, 0.7); width:auto; float:left; display:block}
 /* temporary hacks */
 
 h1.tagline{text-align:center; margin-bottom:12px;}
