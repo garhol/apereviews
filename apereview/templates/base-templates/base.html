@@ -44,10 +44,24 @@
             
 		  <header>
                {% block "header" %}
-            
+                    <div class="container">
+                        <div class="span4 pull-right header_social">
+                            <p class="follow">Follow us</p>
+                            <ul class="social clearfix">
+                                <li><a href="https://www.facebook.com/ApemanVinyl" title="opens in a new window" target="_blank" class="social_icons apeman_fb"><span>Apeman Vinyl on Facebook</span></a></li>
+                                <li><a href="https://twitter.com/ApemanVinyl" title="opens in a new window" target="_blank" class="social_icons apeman_twit"><span>Apeman Vinyl on Twitter</span></a></li>
+                                <li><a href="http://apemanvinyl.tumblr.com/" title="opens in a new window" target="_blank" class="social_icons apeman_tumblr"><span>Apeman Vinyl on Tumblr</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 {% endblock "header" %}
                 <div class="navcontainer">
                 {% block "nav" %}
+                <ul class="nav">
+                    <li><a href="/">home</a></li>
+                    
+                    <li><a href="/reviews/">reviews</a></li>
+                </ul>
                 {% endblock "nav" %}
                 </div>
           </header>
@@ -59,13 +73,14 @@
                 {% endblock "main" %}
     </div>
     
-    <div class="container">
-        <footer class='row'>
-            <div class="span12">
-                <p>&copy; apemanvinyl {% now "Y" %}</p>
-            </div>
-        </footer>
-    </div>
+    <footer>
+        <p class="follow">Follow us</p>
+        <ul class="social clearfix">
+            <li><a href="https://www.facebook.com/ApemanVinyl" title="opens in a new window" target="_blank" class="social_icons apeman_fb"><span>Apeman Vinyl on Facebook</span></a></li>
+            <li><a href="https://twitter.com/ApemanVinyl" title="opens in a new window" target="_blank" class="social_icons apeman_twit"><span>Apeman Vinyl on Twitter</span></a></li>
+            <li><a href="http://apemanvinyl.tumblr.com/" title="opens in a new window" target="_blank" class="social_icons apeman_tumblr"><span>Apeman Vinyl on Tumblr</span></a></li>
+        </ul>
+    </footer>
     
     {% block "javascript" %}
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>

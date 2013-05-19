@@ -5,22 +5,12 @@
 {% block meta_desc %}{{review.review|striptags|safe|truncatechars:100}}{% endblock %}
 {% block keywords %}{{review.artist}}, {{review.album}}, {{review.tags}} {% endblock %}
 
-
-{% block "nav" %}
-<ul class="nav">
-<li><a href="/">home</a></li>
-</ul>
-{% endblock "nav" %}
-
 {% block "main" %}
 <div class="row">
     <div class="span4 pull-right right_col">
       <div class="about_box">
           <h2><span class="black">About</span> Apeman Vinyl</h2>
-          <p>Another contusion from violence. On the streets, another fuckin murder, animals rip you apart.
-           Juiced up fuckin losers, rowin over nothin. friday nite's entertainment. 
-           All over the country, mindless fuckin robots gather in their shitty pub/clubs. 
-           They got their fuckin shoes on, aint a fuckin problem at kick out time the violence starts</p>         
+             {{about.content|safe}}        
           
           <h3>Our writers</h3>
           {% for p in personnel %}
@@ -30,7 +20,7 @@
              </div>
           {% endfor %}
           
-          <h3>Categories</h3>
+          {% include "includes/categories.html" %}
       </div>
     </div>
 
@@ -38,7 +28,7 @@
 	<div class="span8">
 		<div class="review_page clearfix">
 			
-			<div class="review_image" style='background:url({% if review.album_image %}{{MEDIA_URL}}{{review.album_image}}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) #333 no-repeat top center'>
+			<div class="review_image" style='background:url({% if review.album_banner_image %}{{MEDIA_URL}}{{review.album_banner_image}}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) #333 no-repeat top center'>
 					<div class="review_date_stamp">{{review.date_created|date:"D d M Y"}}</div>
 					<div class="review_meta">
                         <h2 class="album_title">{{review.album}}</h2>
@@ -50,7 +40,7 @@
 			<div class="review_body">
 				{{review.review|safe}}
 			
-				<p>{{review.reviewer}} gives this a score of {{review.score}}/10</p>
+				<p>{{review.album}} is out on {{review.release_date|date:"D d M Y"}} on {{review.label}}</p>
 			</div>
         </div>
 	</div>

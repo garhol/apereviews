@@ -24,7 +24,9 @@ class Review(models.Model):
 
     artist = models.CharField(max_length=255)
     album = models.CharField(max_length=255)
+    label = models.CharField(max_length=255, default="Apeman")
     album_image =  models.ImageField(upload_to='albums/images/%Y/%m/%d', null=True, blank=True)
+    album_banner_image =  models.ImageField(upload_to='albums/images/banners/%Y/%m/%d', null=True, blank=True)
     review = tinymce_models.HTMLField()
     date_created = models.DateTimeField(auto_now_add = True, null=True)
     score = models.CharField(

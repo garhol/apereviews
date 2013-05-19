@@ -15,6 +15,7 @@ body{
     background:url('../img/wooden_floor_bg.jpg') top center repeat;
 }
 header{background:#000 url('../img/masthead.jpg') center top no-repeat; min-height:255px; width:100%; position:relative;}
+footer{background:#000; min-height:50px; width:100%; position:relative; margin-top:2em;}
 
 /* typography  */
 h1 {font: 48px 'LeagueGothicRegular', Arial, sans-serif;letter-spacing: 0; color:#fff;}
@@ -32,7 +33,8 @@ h1 a, h2 a, h3 a, h4 a {font-weight:normal;}
 
 /* nav */
 .navcontainer{position: absolute;bottom: 0;height: 40px;width: 100%; text-align:center;}
-ul.nav{margin-bottom: 0.2em; margin-left: auto; margin-right: auto; position: relative; margin-top: 0.3em;}
+ul.nav{margin-bottom: 0.2em; margin-left: auto; margin-right: auto; position: relative; margin-top: 0.3em; display:inline-block;}
+ul.nav li{float:left; margin:0 0.5em;}
 ul.nav li a{font: 25px 'LeagueGothicRegular', Arial, sans-serif;letter-spacing: 0; color:#fff;}
 ul.nav li a:hover {background-color:#000;}
 
@@ -68,6 +70,21 @@ ul.nav li a:hover {background-color:#000;}
   -webkit-font-smoothing: antialiased;
 }
 
+/* social media icons */
+footer .follow{text-align:center; color:#fff; margin-top:1em; position:relative; display:inline-block; width:100%;}
+footer {width: 100%; text-align:center;}
+ul.social{position: relative; display:inline-block; margin:0 0 1em 0;}
+ul.social li {list-style:none;  float:left; width:46px; height:44px; }
+ul.social li a.social_icons{background:url(../img/social_sprites.png) #000 no-repeat top left; width:46px; height:44px; display:inline-block;}
+ul.social li a.social_icons span{position:absolute; left:-9000px;}
+ul.social li a.apeman_fb{background-position:0px 0px}
+ul.social li a.apeman_twit{background-position:-46px 0px}
+ul.social li a.apeman_tumblr{background-position:-92px 0px}
+
+
+.header_social{text-align:right; margin-top:85px;}
+.header_social .follow{color:#fff; margin-bottom:5px;}
+
 /* right col */
 .about_box{margin:1em;}
 .about_box h2, .about_box h3{border-bottom:1px solid #ddd; padding-bottom:0.5em; margin-bottom:0.5em;}
@@ -75,11 +92,28 @@ ul.nav li a:hover {background-color:#000;}
 .writers_links{margin-bottom:1.2em;}
 .writers_links img{margin-right:1em;}
 
+ul.category_nav{margin-bottom: 0.2em; margin-left: auto; margin-right: auto; position: relative; margin-top: 0.3em; display:inline-block;}
+ul.category_nav li{float:left; margin:0.5em 0; width:100%; list-style:none;}
+
+
 /* Review pages */
 .review_page{background:#fff;}
 .review_page .review_image {margin:0;}
 .review_page .review_meta {padding-left:1em; margin-top:140px; clear:left; float:left; width:40%; min-width:190px;} 
 .review_page .review_date_stamp{padding:0.5em; background:rgba(255, 255, 255, 0.7); width:auto; float:left; display:block}
+
+
+/* Staff pages */
+.staff_page{background:#fff; margin-bottom:1em;}
+.staff_page .staff_image {margin:0; height:315px;}
+.staff_page .staff_meta {background:#fff; padding-left:1em; display: inline-block; margin-top:170px; clear:left; float:left; width:40%; min-width:190px;} 
+.staff_body {margin:1em;}
+
+.staff_meta h2.album_title{color:#000;}
+.staff_meta h3.album_artist{color:#cc1b21; font: 30px 'LeagueGothicRegular', Arial, sans-serif;}
+
+.noreviews{margin-left:0.5em; margin-bottom:5em;}
+
 /* temporary hacks */
 
 h1.tagline{text-align:center; margin-bottom:12px;}

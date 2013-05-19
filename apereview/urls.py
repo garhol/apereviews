@@ -10,13 +10,25 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'apereview.lib.apps.home.views.home', name='home'),
-    url(r'^reviews/(?P<review>\d+)/$',
-        'apereview.lib.apps.reviews.views.show_review', name="show_review"),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+)
+
+#reviews urls
+urlpatterns += patterns('',
+   url(r'^reviews/(?P<review>\d+)/$',
+        'apereview.lib.apps.reviews.views.show_review', name="show_review"),
+    url(r'^reviews/$',
+        'apereview.lib.apps.reviews.views.list_reviews', name="list_reviews"),
+)
+
+#staff urls
+urlpatterns += patterns('',
+   url(r'^staff/(?P<staff>\d+)/$',
+        'apereview.lib.apps.personnel.views.show_personnel', name="show_staff"),
 )
 
 urlpatterns += patterns('',
