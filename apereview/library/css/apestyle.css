@@ -39,7 +39,7 @@ ul.nav li a{font: 25px 'LeagueGothicRegular', Arial, sans-serif;letter-spacing: 
 ul.nav li a:hover {background-color:#000;}
 
 /* review pods */
-.review_pod, .right_col{background:#fff;}
+.review_pod, .right_col{background:#fff; margin-bottom:1em;}
 .review_pod a {color:#}
 .review_pod h2.entry-title a {color:#cc1b21;}
 
@@ -86,6 +86,9 @@ ul.social li a.apeman_tumblr{background-position:-92px 0px}
 .header_social .follow{color:#fff; margin-bottom:5px;}
 
 /* right col */
+
+.right_col{margin-bottom:8em;}
+
 .about_box{margin:1em;}
 .about_box h2, .about_box h3{border-bottom:1px solid #ddd; padding-bottom:0.5em; margin-bottom:0.5em;}
 
