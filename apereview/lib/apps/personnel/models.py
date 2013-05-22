@@ -5,6 +5,7 @@ from tinymce import models as tinymce_models
 class Personnel(models.Model):
     user = models.ForeignKey(User)
     nickname = models.CharField(max_length=255)
+    slug = models.CharField(max_length=255, null=True, blank=True)
     job_title = models.CharField(max_length=255)
     bio_pic =  models.ImageField(upload_to='writers/images/%Y/%m/%d', null=True, blank=True)
     banner_image =  models.ImageField(upload_to='writers/images/banner/%Y/%m/%d', null=True, blank=True)
