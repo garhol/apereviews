@@ -16,7 +16,7 @@
           {% for p in personnel %}
              <div class="writers_links">
                   <p><img src="{% if p.bio_pic %}{% thumbnail p.bio_pic 70x70 crop %}{% endif %}" alt="{{ p.nickname }}" />
-                  <a href="/staff/{{p.slug}}" alt="visit {{ p.nickname }}'s bio"/>{{ p.nickname }}</a></p>
+                  <a href="/staff/{{p.slug}}/" alt="visit {{ p.nickname }}'s bio"/>{{ p.nickname }}</a></p>
              </div>
           {% endfor %}
           
@@ -33,7 +33,7 @@
 					<div class="review_meta">
                         <h2 class="album_title">{{review.album}}</h2>
                         <h3 class="album_artist">{{review.artist}}</h3>
-                        <p>by <a href="/staff/{{review.reviewer.slug}}">{{review.reviewer}}</a></p>
+                        <p>by <a href="/staff/{{review.reviewer.slug}}/">{{review.reviewer}}</a></p>
                     </div>
 			</div>
 			

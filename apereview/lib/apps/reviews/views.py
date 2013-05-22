@@ -10,7 +10,7 @@ def show_review(request, review):
     context = {}
     template = 'review.html'
     if review:
-        r = get_object_or_404(Review, pk=review)
+        r = get_object_or_404(Review, slug=review)
         context['review'] = r
     else:
         context['error'] = "Review matching query does not exist"

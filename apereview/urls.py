@@ -19,7 +19,7 @@ urlpatterns = patterns('',
 
 #reviews urls
 urlpatterns += patterns('',
-   url(r'^reviews/(?P<review>\d+)/$',
+   url(r'^reviews/(?P<review>[\w-]+)/$',
         'apereview.lib.apps.reviews.views.show_review', name="show_review"),
     url(r'^reviews/$',
         'apereview.lib.apps.reviews.views.list_reviews', name="list_reviews"),
