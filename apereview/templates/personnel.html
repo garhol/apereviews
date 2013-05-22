@@ -53,8 +53,7 @@
                             </div>
                       </div>
                       <div class="review_body clearfix">
-                          <p>{{r.review|striptags|safe|truncatechars:200}}</p>
-                        <p>{{r.date_created}}</p>
+                          <p class="review_pod_text">{{r.review|striptags|safe|truncatechars:200}}</p>
                         <a class="btn btn-blue more_button" href="/reviews/{{r.pk}}">Read more</a> 
                       </div>
                     </div>
