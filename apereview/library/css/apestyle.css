@@ -65,7 +65,7 @@ ul.nav li a:hover {background-color:#000;}
 .review_meta h3.album_artist{color:#cc1b21; font: 30px 'LeagueGothicRegular', Arial, sans-serif; margin-top:0px; margin-bottom:0.1em;}
 
 .review_body {margin:1em;}
-.review_body p {min-height:132px;}
+.review_pod .review_body p {min-height:132px;}
 .more_button{float:right;}
 
 /* awkward button color */
