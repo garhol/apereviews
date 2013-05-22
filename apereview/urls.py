@@ -27,7 +27,7 @@ urlpatterns += patterns('',
 
 #staff urls
 urlpatterns += patterns('',
-   url(r'^staff/(?P<staff>\d+)/$',
+   url(r'^staff/(?P<staff>[\w-]+)/$',
         'apereview.lib.apps.personnel.views.show_personnel', name="show_staff"),
 )
 

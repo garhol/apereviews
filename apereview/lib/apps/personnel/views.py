@@ -10,11 +10,12 @@ def show_personnel(request, staff):
     context = {}
     template = 'personnel.html'
     if staff:
-        s = get_object_or_404(Personnel, pk=staff)
+        s = get_object_or_404(Personnel, slug=staff)
+        context['reviews'] = Review.objects.filter(review_status='live', reviewer=s).order_by('-date_created')
         context['staff'] = s
     else:
         context['error'] = "Staff matching query does not exist"
-    context['reviews'] = Review.objects.filter(review_status='live', reviewer=staff).order_by('-date_created')
+
     context['personnel'] = Personnel.objects.all()
     context['about'] = AboutText.objects.all()[:1].get()
     return render_to_response(template, context, context_instance=RequestContext(request))
