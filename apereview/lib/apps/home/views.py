@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.conf import settings
 from itertools import chain
 from operator import attrgetter
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from apereview.lib.apps.news.models import News
 from apereview.lib.apps.reviews.models import Review
@@ -14,11 +15,24 @@ def home(request):
      
     review_list = Review.objects.filter(review_status='live').order_by('-date_created')
     news_list = News.objects.filter(news_status='live').order_by('-date_created')
-    context['reviews'] = sorted(
+    
+    r_list = sorted(
         chain(review_list, news_list),
         key=attrgetter('date_created'), reverse=True)
-            
+    paginator = Paginator(r_list, settings.ITEMS_PER_PAGE) # Show 25 contacts per page
+    page = request.GET.get('page')     
+   
+    try:
+        reviews = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        reviews = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        reviews = paginator.page(paginator.num_pages)
+        
     #context['reviews'] = Review.objects.filter(review_status='live').order_by('-date_created')
+    context['reviews'] = reviews
     context['personnel'] = Personnel.objects.all()
     context['about'] = AboutText.objects.all()[:1].get()
     

@@ -123,6 +123,8 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, 'templates')
 )
 
+ITEMS_PER_PAGE = 8
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
