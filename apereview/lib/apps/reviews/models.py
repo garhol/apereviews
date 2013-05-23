@@ -38,5 +38,11 @@ class Review(models.Model):
     reviewer = models.ForeignKey(Personnel, related_name='reviewer')
     tags = models.TextField()
 
+
+    def get_class(self):
+        myclass = "review"
+        return myclass
+
+
     def __unicode__(self):
         return self.album

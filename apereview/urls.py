@@ -25,6 +25,14 @@ urlpatterns += patterns('',
         'apereview.lib.apps.reviews.views.list_reviews', name="list_reviews"),
 )
 
+#news urls
+urlpatterns += patterns('',
+   url(r'^news/(?P<article>[\w-]+)/$',
+        'apereview.lib.apps.news.views.show_news', name="show_news"),
+    url(r'^news/$',
+        'apereview.lib.apps.news.views.list_news', name="list_news"),
+)
+
 #staff urls
 urlpatterns += patterns('',
    url(r'^staff/(?P<staff>[\w-]+)/$',
