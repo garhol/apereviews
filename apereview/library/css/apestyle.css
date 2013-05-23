@@ -55,7 +55,7 @@ ul.nav li a{font: 25px 'LeagueGothicRegular', Arial, sans-serif;letter-spacing: 
 ul.nav li a:hover {background-color:#000;}
 
 /* review pods */
-.review_pod, .right_col{background:#fff; margin-bottom:1em;}
+.review_pod, .right_col{background:#fff; margin-bottom:2em;}
 .review_pod a {color:#}
 .review_pod h2.entry-title a {color:#cc1b21;}
 
