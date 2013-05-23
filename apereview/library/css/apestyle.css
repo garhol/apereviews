@@ -148,6 +148,9 @@ ul.category_nav li{float:left; margin:0.5em 0; width:100%; list-style:none;}
 
 /* temporary hacks */
 
+/* odd responsive bugfix - losing margin */
+.review_pod, .right_col{padding-top: 0.01em;}
+
 h1.tagline{text-align:center; margin-bottom:12px;}
 #content, #sidebar{width:70%; float:left; margin-top:0.5em;}
 #sidebar{width:30%; background:#fff;}

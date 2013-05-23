@@ -26,7 +26,7 @@
             {% for r in reviews %}
                 {% if r.get_class == "review" %}
                   <div class="review_pod span4">
-                      <div class="review_image" style='background:url({% if r.album_image %}{% thumbnail r.album_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center'>
+                      <div class="review_image" style='background:url({% if r.album_image %}{% thumbnail r.album_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                             <div class="review_meta">
                                 <h2 class="album_title">{{r.album}}</h2>
                                 <h3 class="album_artist">{{r.artist}}</h3>
@@ -40,7 +40,7 @@
                     </div>
                 {% else %}
                     <div class="review_pod span4">
-                      <div class="review_image" style='background:url({% if r.promo_image %}{% thumbnail r.promo_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center'>
+                      <div class="review_image" style='background:url({% if r.promo_image %}{% thumbnail r.promo_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                             <div class="review_meta">
                                 <h2 class="album_title">{{r.title}}</h2>
                                 <p>by <a href="/staff/{{r.reporter.slug}}/">{{r.reporter}}</a></p>
