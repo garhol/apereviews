@@ -39,9 +39,10 @@
 			
 			<div class="review_body">
 				{{review.review|safe}}
-			
-				<p>{{review.album}} is out on {{review.release_date|date:"D d M Y"}} on {{review.label}}</p>
 			</div>
+            <div class="release_info">
+				<p>{{review.album}} is out on {{review.release_date|date:"D d M Y"}} on {{review.label}}</p>
+            </div>
         </div>
 	</div>
 
