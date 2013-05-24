@@ -39,14 +39,15 @@ urlpatterns += patterns('',
         'apereview.lib.apps.personnel.views.show_personnel', name="show_staff"),
 )
 
-#urlpatterns += patterns('',
-#    url(r'^library/(?P<path>.*)$', 'django.views.static.serve', {
-#    'document_root': settings.MEDIA_ROOT}),
-#)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     urlpatterns += patterns('',
         url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
-           'document_root': settings.STATIC_ROOT,
+            'document_root': settings.STATIC_ROOT,
         }),
-   )
+    )
+    urlpatterns += patterns('',
+        url(r'^library/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+    )+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
