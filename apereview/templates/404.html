@@ -1,0 +1,26 @@
+{% extends "base-templates/base.html" %}
+
+{% block page_title %}Welcome{% endblock %}
+
+
+{% block "main" %}
+<div class="row">
+    <div class="span4 pull-right right_col">
+      <div class="about_box">
+          <h2><span class="black">About</span> Apeman Vinyl</h2> 
+             <p>404 :(</p>         
+             {% include "includes/categories.html" %}
+      </div>
+    </div>
+    <div class="span8">
+        <div class="row">
+           <div class="review_pod span8">
+            <h2>404 - Page not found</h2>
+            <p>We've misplaced your page. Sorry.</p>
+            <p>The <a href="/">homepage</a> is the best place to begin again.</p>
+           </div> 
+        </div>
+    </div>
+</div>    
+
+{% endblock "main" %}
