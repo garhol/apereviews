@@ -31,7 +31,7 @@
 			<div class="review_image" style='background:url({% if article.news_banner_image %}{{MEDIA_URL}}{{article.news_banner_image}}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) #333 no-repeat top center'>
 					<div class="review_meta">
                         <h2 class="album_title">{{article.title}}</h2>
-                        <p>by <a href="/staff/{{article.reviewer.slug}}/">{{article.reporter}}</a></p>
+                        <p>by <a href="/staff/{{article.reporter.slug}}/">{{article.reporter}}</a></p>
                     </div>
 			</div>
 			
