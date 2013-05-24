@@ -123,7 +123,7 @@ ul.category_nav li{float:left; margin:0.5em 0; width:100%; list-style:none;}
 .review_page .review_date_stamp{padding:0.5em; background:rgba(255, 255, 255, 0.7); width:auto; float:left; display:block}
 
 review_page .review_body{margin-bottom:2em;}
-.release_info{background:#f00; color:#fff; padding:1em;}
+.release_info{background:#cc1b21; color:#fff; padding:1em;}
 .release_info p{margin:0px; font-style:italic;}
 
 /* Staff pages */
