@@ -40,6 +40,18 @@
 			<div class="review_body">
 				{{review.review|safe}}
 			</div>
+            <div class="social_buttons">
+                <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}&p[title]={{review.album}}-{{review.artist}}&p[summary]={{review.review|striptags|safe|truncatechars:100}}">
+                    <img src="{{STATIC_URL}}img/facebook_32.png" alt="Share on facebook" />
+                </a>
+                <a target="_blank" href="http://twitter.com/home?status=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}">
+                    <img src="{{STATIC_URL}}img/twitter_32.png" alt="Share on twitter" />
+                </a>
+                <a target="_blank" href="https://plus.google.com/share?url=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}">
+                    <img src="{{STATIC_URL}}img/google_plus_32.png" alt="Share on google plus" />
+                </a>
+
+            </div>
             <div class="release_info">
 				<p>{{review.album}} is out on {{review.release_date|date:"D d M Y"}} on {{review.label}}</p>
             </div>

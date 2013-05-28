@@ -38,6 +38,18 @@
 			<div class="review_body">
 				{{article.article|safe}}
 			</div>
+            <div class="social_buttons">
+                <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}&p[title]={{article.title}}&p[summary]={{article.article|striptags|safe|truncatechars:100}}">
+                    <img src="{{STATIC_URL}}img/facebook_32.png" alt="Share on facebook" />
+                </a>
+                <a target="_blank" href="http://twitter.com/home?status=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}">
+                    <img src="{{STATIC_URL}}img/twitter_32.png" alt="Share on twitter" />
+                </a>
+                <a target="_blank" href="https://plus.google.com/share?url=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}">
+                    <img src="{{STATIC_URL}}img/google_plus_32.png" alt="Share on google plus" />
+                </a>
+
+            </div>
         </div>
 	</div>
 

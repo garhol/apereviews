@@ -149,6 +149,9 @@ review_page .review_body{margin-bottom:2em;}
  .pagination_links .newposts{float:left;}
 .pagination_links .oldposts{float:right;}
 
+/* social */
+.social_buttons{ text-align:right; margin-bottom:1em; margin-right:1em;}
+.social_buttons a:hover{text-decoration:none;}
 /* temporary hacks */
 
 /* odd responsive bugfix - losing margin */
