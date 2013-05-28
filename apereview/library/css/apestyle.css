@@ -55,6 +55,11 @@ ul.nav li a{font: 25px 'LeagueGothicRegular', Arial, sans-serif;letter-spacing: 
 ul.nav li a:hover {background-color:#000;}
 
 /* review pods */
+.review_pod {margin-top:30px;}
+.review_pod .label_holder{margin-top:-30px;}
+.review_pod .label_holder .label_text {background:#000; color:#fff; font-style:italic; padding:0 0.5em 0 0.5em; float:left; height:30px;}
+.review_pod .label_holder .label_text p {margin-bottom:0px;}
+.review_pod .label_holder .littleblacktriangle{line-height: 0%; width: 0px; border-top:30px solid transparent; border-left: 15px solid #000; float:left;}
 .review_pod, .right_col{background:#fff; margin-bottom:2em;}
 .review_pod a {color:#}
 .review_pod h2.entry-title a {color:#cc1b21;}
@@ -150,7 +155,7 @@ review_page .review_body{margin-bottom:2em;}
 .pagination_links .oldposts{float:right;}
 
 /* social */
-.social_buttons{ text-align:right; margin-bottom:1em; margin-right:1em;}
+.social_buttons{ text-align:center; margin-bottom:1em; margin-right:1em;}
 .social_buttons a:hover{text-decoration:none;}
 /* temporary hacks */
 
