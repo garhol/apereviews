@@ -56,6 +56,24 @@
 				<p>{{review.album}} is out on {{review.release_date|date:"D d M Y"}} on {{review.label}}</p>
             </div>
         </div>
+        
+        <div class="row pagination_links">
+            <div class="span3">              
+                {% if next_review %}
+                    <h1 class="newposts"><a href="/reviews/{{next_review.slug}}">&lt; Next review</a></h1>
+                {% endif %}
+                    
+            </div>
+            <div class="span2">
+                
+            </div>
+            <div class="span3">
+                {% if prev_review %}
+                    <h1 class="oldposts"><a href="/reviews/{{prev_review.slug}}">Previous review &gt;</a></h1>
+                {% endif %}
+            </div>
+        </div>
+            
 	</div>
 
 </div>    

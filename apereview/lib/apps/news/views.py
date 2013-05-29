@@ -13,8 +13,18 @@ def show_news(request, article):
     if article:
         a = get_object_or_404(News, slug=article)
         context['article'] = a
+        try:
+            context['next_article'] = a.get_next_by_date_created(news_status='live')
+        except:
+            context['next_article'] = ""
+        try:
+            context['prev_article'] = a.get_previous_by_date_created(news_status='live')
+        except:
+            context['prev_article'] = ""
+            
     else:
         context['error'] = "News article matching query does not exist"
+    
     context['personnel'] = Personnel.objects.all()
     context['about'] = AboutText.objects.all()[:1].get() 
     return render_to_response(template, context, context_instance=RequestContext(request))

@@ -13,6 +13,15 @@ def show_review(request, review):
     if review:
         r = get_object_or_404(Review, slug=review)
         context['review'] = r
+        try:
+            context['next_review'] = r.get_next_by_date_created(review_status='live')
+        except:
+            context['next_review'] = ""
+        try:
+            context['prev_review'] = r.get_previous_by_date_created(review_status='live')
+        except:
+            context['prev_review'] = ""
+            
     else:
         context['error'] = "Review matching query does not exist"
     context['personnel'] = Personnel.objects.all()

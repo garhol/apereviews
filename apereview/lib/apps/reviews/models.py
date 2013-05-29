@@ -2,6 +2,8 @@ from django.db import models
 from tinymce import models as tinymce_models
 from apereview.lib.apps.personnel.models import Personnel
 
+from datetime import datetime
+
 class Review(models.Model):
 
     APE_SCORE = (
@@ -29,7 +31,7 @@ class Review(models.Model):
     album_image =  models.ImageField(upload_to='albums/images/%Y/%m/%d', null=True, blank=True)
     album_banner_image =  models.ImageField(upload_to='albums/images/banners/%Y/%m/%d', null=True, blank=True)
     review = tinymce_models.HTMLField()
-    date_created = models.DateTimeField(auto_now_add = True, null=True)
+    date_created = models.DateTimeField(auto_now_add = True, default=datetime.now)
     score = models.CharField(
         max_length=15, choices=APE_SCORE, default='1')
     review_status = models.CharField(

@@ -48,9 +48,27 @@
                 <a target="_blank" href="https://plus.google.com/share?url=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}">
                     <img src="{{STATIC_URL}}img/google_plus_32.png" alt="Share on google plus" />
                 </a>
-
             </div>
+                        
         </div>
+        
+        <div class="row pagination_links">
+                <div class="span3">              
+                    {% if next_article %}
+                        <h1 class="newposts"><a href="/news/{{next_article.slug}}">&lt; Next article</a></h1>
+                    {% endif %}
+                        
+                </div>
+                <div class="span2">
+                    
+                </div>
+                <div class="span3">
+                    {% if prev_article %}
+                        <h1 class="oldposts"><a href="/news/{{prev_article.slug}}">Previous article &gt;</a></h1>
+                    {% endif %}
+                </div>
+            </div>
+            
 	</div>
 
 </div>    
