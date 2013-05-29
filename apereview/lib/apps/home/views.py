@@ -19,7 +19,7 @@ def home(request):
     r_list = sorted(
         chain(review_list, news_list),
         key=attrgetter('date_created'), reverse=True)
-    paginator = Paginator(r_list, settings.ITEMS_PER_PAGE) # Show 25 contacts per page
+    paginator = Paginator(r_list, settings.ITEMS_PER_PAGE)
     page = request.GET.get('page')     
    
     try:
@@ -30,8 +30,7 @@ def home(request):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         reviews = paginator.page(paginator.num_pages)
-        
-    #context['reviews'] = Review.objects.filter(review_status='live').order_by('-date_created')
+
     context['reviews'] = reviews
     context['personnel'] = Personnel.objects.all()
     context['about'] = AboutText.objects.all()[:1].get()

@@ -41,6 +41,25 @@
                 </div>
             {% endfor %}
         </div>
+    
+        <div class="row pagination_links">
+            <div class="span3">              
+                {% if articles.has_previous %}
+                    <h1 class="newposts"><a href="?page={{ articles.previous_page_number }}">&lt; Newer posts</a></h1>
+                {% endif %}
+            </div>
+            <div class="span2">
+                <span class="current">
+                    <h1>{{ articles.number }}/{{ articles.paginator.num_pages }}</h1>
+                </span>
+            </div>
+            <div class="span3">
+                {% if articles.has_next %}
+                    <h1 class="oldposts"><a href="?page={{ articles.next_page_number }}">Older posts &gt;</a></h1>
+                {% endif %}               
+            </div>
+        </div>
+    
     </div>
 </div>    
 {% endblock "main" %}

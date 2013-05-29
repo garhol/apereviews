@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.conf import settings
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Review
 from apereview.lib.apps.personnel.models import Personnel
@@ -21,7 +22,23 @@ def show_review(request, review):
 def list_reviews(request):
     context = {}
     template = 'list_reviews.html'
-    context['reviews'] = Review.objects.filter(review_status='live').order_by('-date_created')
+    
+    review_list = Review.objects.filter(review_status='live').order_by('-date_created')
+   
+    paginator = Paginator(review_list, settings.ITEMS_PER_PAGE)
+    page = request.GET.get('page')     
+   
+    try:
+        reviews = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        reviews = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        reviews = paginator.page(paginator.num_pages)
+        
+    context['reviews'] = reviews
+    
     context['personnel'] = Personnel.objects.all()
     context['about'] = AboutText.objects.all()[:1].get()
     return render_to_response(template, context, context_instance=RequestContext(request))
