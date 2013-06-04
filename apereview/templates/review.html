@@ -39,6 +39,9 @@
 			
 			<div class="review_body">
 				{{review.review|safe}}
+                {% if review.spotifylink %}
+                <p>Listen now on spotify - <a href="{{review.spotifylink}}">{{review.album}}</a></p>
+                {% endif %}
 			</div>
             <div class="social_buttons">
                 <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}&p[title]={{review.album}}-{{review.artist}}&p[summary]={{review.review|striptags|safe|truncatechars:100}}">
