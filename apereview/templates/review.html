@@ -38,9 +38,12 @@
 			</div>
 			
 			<div class="review_body">
+                {% if review.spotifylink %}
+                    <div class="spotplayer"><iframe src="https://embed.spotify.com/?uri={{review.spotifylink}}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe></div>
+                {% endif %}
 				{{review.review|safe}}
                 {% if review.spotifylink %}
-                <p>Listen now on spotify - <a href="{{review.spotifylink}}">{{review.album}}</a></p>
+                    <p>Listen now on spotify - <a href="{{review.spotifylink}}">{{review.album}}</a></p>              
                 {% endif %}
 			</div>
             <div class="social_buttons">

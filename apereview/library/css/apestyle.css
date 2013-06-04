@@ -130,6 +130,7 @@ ul.category_nav li{float:left; margin:0.5em 0; width:100%; list-style:none;}
 review_page .review_body{margin-bottom:2em;}
 .release_info{background:#cc1b21; color:#fff; padding:1em;}
 .release_info p{margin:0px; font-style:italic;}
+.spotplayer{float:right; margin-left:1em; margin-bottom:1em;}
 
 /* Staff pages */
 .staff_page{background:#fff; margin-bottom:1em;}
