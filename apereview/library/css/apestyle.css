@@ -10,10 +10,6 @@
 
 }
 
-@media (max-width: 767px) {
-    .header_social{display:none;}
-}
-
 /* basic layout */
 body{
     background:url('../img/wooden_floor_bg.jpg') top center repeat;  background-attachment:fixed;
@@ -173,3 +169,12 @@ h1.tagline{text-align:center; margin-bottom:12px;}
 #header ul.top-navigation{width:200px; float:left;}
 #header form {float:right;}
 
+@media (max-width: 767px) {
+	body{padding:0px;}
+	.container{margin-left:20px; margin-right:20px;}
+    .header_social{display:none;}
+    .review_pod{margin-bottom:3em;}
+    h1.tagline{font-size:2em;}
+    .right_col {margin-bottom:2em;}
+    .pagination_links h1 {font-size:1.6em;}
+}
