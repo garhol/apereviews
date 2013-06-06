@@ -5,6 +5,10 @@
 {% block meta_desc %}{{review.review|striptags|safe|truncatechars:100}}{% endblock %}
 {% block keywords %}{{review.artist}}, {{review.album}}, {{review.tags}} {% endblock %}
 
+{% block "extrameta" %} 
+<meta property="og:title" content="Review ({{review.artist}} -  {{review.album}})" />
+<meta property="og:image" content="http://{{ request.META.HTTP_HOST }}{{MEDIA_URL}}{{review.album_image}}" />
+{% endblock %}
 {% block "main" %}
 <div class="row">
 	<div class="span8">
@@ -38,7 +42,6 @@
                 <a target="_blank" href="https://plus.google.com/share?url=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}">
                     <img src="{{STATIC_URL}}img/google_plus_32.png" alt="Share on google plus" />
                 </a>
-
             </div>
             <div class="release_info">
 				<p>{{review.album}} is out on {{review.release_date|date:"D d M Y"}} on {{review.label}}</p>

@@ -5,6 +5,10 @@
 {% block meta_desc %}{{article.article|striptags|safe|truncatechars:100}}{% endblock %}
 {% block keywords %}{{article.reporter}}, {{article.title}}, apeman, music, news, {{article.tags}} {% endblock %}
 
+{% block "extrameta" %} 
+<meta property="og:title" content="News ({{article.reporter}} -  {{article.title}})" />
+<meta property="og:image" content="http://{{ request.META.HTTP_HOST }}{{MEDIA_URL}}{{article.promo_image}}" />
+{% endblock %}
 {% block "main" %}
 <div class="row">
 	<div class="span8">
