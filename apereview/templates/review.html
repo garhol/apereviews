@@ -8,6 +8,8 @@
 {% block "extrameta" %} 
 <meta property="og:title" content="Review ({{review.artist}} -  {{review.album}})" />
 <meta property="og:image" content="http://{{ request.META.HTTP_HOST }}{{MEDIA_URL}}{{review.album_image}}" />
+<meta property="og:description" content="{{review.review|striptags|safe|truncatechars:100}}" />
+
 {% endblock %}
 {% block "main" %}
 <div class="row">

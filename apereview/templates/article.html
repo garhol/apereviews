@@ -8,6 +8,7 @@
 {% block "extrameta" %} 
 <meta property="og:title" content="News ({{article.reporter}} -  {{article.title}})" />
 <meta property="og:image" content="http://{{ request.META.HTTP_HOST }}{{MEDIA_URL}}{{article.promo_image}}" />
+<meta property="og:description" content="{{article.article|striptags|safe|truncatechars:100}}" />
 {% endblock %}
 {% block "main" %}
 <div class="row">
