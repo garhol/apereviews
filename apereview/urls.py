@@ -25,6 +25,14 @@ urlpatterns += patterns('',
         'apereview.lib.apps.reviews.views.list_reviews', name="list_reviews"),
 )
 
+#playlist urls
+urlpatterns += patterns('',
+   url(r'^playlists/(?P<playlist>[\w-]+)/$',
+        'apereview.lib.apps.playlist.views.show_playlist', name="show_playlist"),
+    url(r'^playlists/$',
+        'apereview.lib.apps.playlist.views.list_playlists', name="list_playlists"),
+)
+
 #news urls
 urlpatterns += patterns('',
    url(r'^news/(?P<article>[\w-]+)/$',

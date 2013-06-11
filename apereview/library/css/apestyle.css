@@ -128,6 +128,10 @@ review_page .review_body{margin-bottom:2em;}
 .release_info p{margin:0px; font-style:italic;}
 .spotplayer{float:right; margin-left:1em; margin-bottom:1em;}
 
+/* Playlist pages */
+ul.tracklisting{ list-style:none; margin-left:0px;}
+ul.tracklisting li {padding-bottom:0.3em;}
+
 /* Staff pages */
 .staff_page{background:#fff; margin-bottom:1em;}
 .staff_page .staff_image {margin:0; height:315px;}
