@@ -134,6 +134,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'apereview.lib.apps.reviews',
     'apereview.lib.apps.news',
+    'apereview.lib.apps.playlist',
     'apereview.lib.apps.personnel',
     'apereview.lib.apps.home',
     'apereview.lib.apps.about',
