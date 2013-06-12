@@ -19,7 +19,7 @@ def show_personnel(request, staff):
         s = get_object_or_404(Personnel, slug=staff)       
         review_list = Review.objects.filter(review_status='live', reviewer=s).order_by('-date_created')
         news_list = News.objects.filter(news_status='live', reporter=s).order_by('-date_created')
-        playlist_list = Playlist.objects.filter(playlist_status='live').order_by('-date_created')
+        playlist_list = Playlist.objects.filter(playlist_status='live', listauthor=s).order_by('-date_created')
         
         r_list = sorted(
             chain(review_list, news_list, playlist_list),
