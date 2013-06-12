@@ -56,11 +56,10 @@ def pre_item_save(sender, instance, **kwargs):
         try:
             data = {'q':instance.track}
             r = requests.get(spotifyapi_url, params=data)
-            tree = fromstring(r.content.encode('utf-8'))
+            tree = fromstring(r.content)
             for node in tree.findall('.//{http://www.spotify.com/ns/music/1}track'):
-                print node
                 for album_name in node.findall('.//{http://www.spotify.com/ns/music/1}name'):
-                    if album_name.text.lower() == instance.album.lower():
+                    if album_name.text.lower() == instance.track.lower():
                         album = album_name.text
                         for artist_name in node.findall('.//{http://www.spotify.com/ns/music/1}artist'):
                             art = artist_name.find('.//{http://www.spotify.com/ns/music/1}name')
@@ -70,6 +69,6 @@ def pre_item_save(sender, instance, **kwargs):
                                 instance.spotifylink = href
                                 break
         except:
-            pass
-	
+           pass
+
 pre_save.connect(pre_item_save, sender=PlaylistItem)
