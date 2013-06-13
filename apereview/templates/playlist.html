@@ -31,6 +31,7 @@
                <h3>Listen</h3>
                 <p><a href="{{playlist.playlist_url}}" target="_blank">{{playlist.playlist_url}}</a></p>
                {% endif %} 
+               {% if tracks %}
                 <h3>Track listing</h3>
                 <ul class="tracklisting">
                 {% for t in tracks %}
@@ -43,6 +44,7 @@
                     </li>
                 {% endfor %}
                 </ul>
+               {% endif %}
 			</div>
             <div class="social_buttons">
                 <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[images][0]=http://{{ request.META.HTTP_HOST }}{{MEDIA_URL}}{{playlist.playlist_image}}&amp;p[url]=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}&amp;p[title]={{playlist.title}}&amp;p[summary]={{playlist.content|striptags|safe|truncatechars:100}}">
