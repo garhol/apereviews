@@ -135,6 +135,7 @@ INSTALLED_APPS = (
     'apereview.lib.apps.reviews',
     'apereview.lib.apps.news',
     'apereview.lib.apps.playlist',
+    'apereview.lib.apps.artwork',
     'apereview.lib.apps.personnel',
     'apereview.lib.apps.home',
     'apereview.lib.apps.about',
