@@ -8,6 +8,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from apereview.lib.apps.news.models import News
 from apereview.lib.apps.reviews.models import Review
 from apereview.lib.apps.playlist.models import Playlist
+from apereview.lib.apps.artwork.models import ArtCollection
 from apereview.lib.apps.personnel.models import Personnel
 from apereview.lib.apps.about.models import AboutText
 
@@ -17,9 +18,10 @@ def home(request):
     review_list = Review.objects.filter(review_status='live').order_by('-date_created')
     news_list = News.objects.filter(news_status='live').order_by('-date_created')
     playlist_list = Playlist.objects.filter(playlist_status='live').order_by('-date_created')
+    artwork_list = ArtCollection.objects.filter(collection_status='live').order_by('-date_created')
     
     r_list = sorted(
-        chain(review_list, news_list, playlist_list),
+        chain(review_list, news_list, playlist_list, artwork_list),
         key=attrgetter('date_created'), reverse=True)
     paginator = Paginator(r_list, settings.ITEMS_PER_PAGE)
     page = request.GET.get('page')     

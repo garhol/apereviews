@@ -50,7 +50,7 @@
                         <a class="btn btn-blue more_button" href="/news/{{r.slug}}/">Read more</a> 
                       </div>
                     </div>
-                {% else %}
+                {% elif r.get_class == "playlist" %}
                     <div class="review_pod span4 clearfix">
                       <div class="label_holder clearfix">
                           <div class="label_text">
@@ -67,6 +67,25 @@
                       <div class="review_body clearfix">
                           <p class="review_pod_text">{{r.content|striptags|safe|truncatechars:200}}</p>
                         <a class="btn btn-blue more_button" href="/playlists/{{r.slug}}/">Read more</a> 
+                      </div>
+                    </div>
+                {% else %}
+                    <div class="review_pod span4 clearfix">
+                      <div class="label_holder clearfix">
+                          <div class="label_text">
+                            <p>Artwork</p>    
+                          </div>
+                          <div class="littleblacktriangle"></div>
+                      </div>
+                      <div class="review_image" style='background:url({% if r.collection_image %}{% thumbnail r.collection_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
+                            <div class="review_meta">
+                                <h2 class="album_title">{{r.title}}</h2>
+                                <p>by <a href="/staff/{{r.collection_author.slug}}/">{{r.collection_author}}</a></p>
+                            </div>
+                      </div>
+                      <div class="review_body clearfix">
+                          <p class="review_pod_text">{{r.content|striptags|safe|truncatechars:200}}</p>
+                        <a class="btn btn-blue more_button" href="/artwork/{{r.slug}}/">Read more</a> 
                       </div>
                     </div>
                 {% endif  %}
