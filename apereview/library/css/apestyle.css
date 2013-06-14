@@ -133,7 +133,7 @@ ul.tracklisting{ list-style:none; margin-left:0px;}
 ul.tracklisting li {padding-bottom:0.3em;}
 
 /* artwork pages */
-.review_page .artwork_meta {padding-left:1em; margin-top:10px; clear:left; float:left; padding-right:1em;}  
+.review_page .artwork_meta {padding-left:1em; margin-top:10px; clear:left; float:left; padding-right:1em; min-width: 95%;}  
 
 /* Staff pages */
 .staff_page{background:#fff; margin-bottom:1em;}
