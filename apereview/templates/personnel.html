@@ -76,7 +76,7 @@
                           <div class="review_image" style='background:url({% if r.playlist_image %}{% thumbnail r.playlist_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                                 <div class="review_meta">
                                     <h2 class="album_title">{{r.title}}</h2>
-                                    <p>by <a href="/staff/{{r.reporter.slug}}/">{{r.listauthor}}</a></p>
+                                    <p>by <a href="/staff/{{r.listauthor.slug}}/">{{r.listauthor}}</a></p>
                                 </div>
                           </div>
                           <div class="review_body clearfix">
