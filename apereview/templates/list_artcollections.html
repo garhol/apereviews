@@ -7,6 +7,7 @@
 {% block "main" %}
 <div class="row">
     <div class="span8">
+        {% if collections %}
         <div class="row">
             {% for c in collections %}
               <div class="review_pod span4 clearfix">
@@ -41,6 +42,14 @@
                     {% endif %}               
                 </div>
             </div>
+        {% else %}
+            <div class="row">
+                <div class="review_pod span4 clearfix">
+                    <h2>No artworks available at present</h2>
+                </div>
+            </div>
+        {% endif %}
+      
       </div>
       
     <div class="span4 right_col">
