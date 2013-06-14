@@ -6,6 +6,8 @@ class ItemInline(admin.TabularInline):
     extra = 1
 
 class PlaylistAdmin(admin.ModelAdmin):
+    list_filter = ('listauthor', 'playlist_status')
+    list_display = ('title', 'slug', 'playlist_status', 'listauthor',)
     prepopulated_fields = {"slug": ("title",)}
     inlines = [ItemInline]
 

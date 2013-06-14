@@ -3,7 +3,7 @@ from django.contrib import admin
 
 class ReviewAdmin(admin.ModelAdmin):
     list_filter = ('artist', 'reviewer',)
-#    list_display = ('event_title', 'event_type', 'date_created', 'venue', 'event_status', 'trainer',)
+    list_display = ('album', 'artist', 'slug', 'review_status')
     search_fields = ['artist', 'album', 'reviewer']
     prepopulated_fields = {"slug": ("artist", "album",)}
 
