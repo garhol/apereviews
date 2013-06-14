@@ -33,6 +33,14 @@ urlpatterns += patterns('',
         'apereview.lib.apps.playlist.views.list_playlists', name="list_playlists"),
 )
 
+#artcollection urls
+urlpatterns += patterns('',
+   url(r'^artwork/(?P<collection>[\w-]+)/$',
+        'apereview.lib.apps.artwork.views.show_artcollection', name="show_artcollection"),
+    url(r'^artwork/$',
+        'apereview.lib.apps.artwork.views.list_artcollections', name="list_artcollections"),
+)
+
 #news urls
 urlpatterns += patterns('',
    url(r'^news/(?P<article>[\w-]+)/$',

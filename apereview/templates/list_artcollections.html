@@ -1,0 +1,65 @@
+{% extends "base-templates/base.html" %}
+{% load thumbnail %}
+
+{% block page_title %}Welcome{% endblock %}
+
+
+{% block "main" %}
+<div class="row">
+    <div class="span8">
+        <div class="row">
+            {% for c in collections %}
+              <div class="review_pod span4 clearfix">
+                  <div class="review_image" style='background:url({% if c.collection_image %}{% thumbnail c.collection_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
+                        <div class="review_meta">
+                            <h2 class="album_title">{{c.title}}</h2>
+                            
+                            <p>by <a href="/staff/{{p.collection_author.slug}}/">{{c.collection_author}}</a></p>
+                        </div>
+                  </div>
+                  <div class="review_body clearfix">
+                      <p class="review_pod_text">{{c.content|striptags|safe|truncatechars:200}}</p>
+                    <a class="btn btn-blue more_button" href="/artwork/{{c.slug}}/">Read more</a> 
+                  </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row pagination_links">
+                <div class="span3">              
+                    {% if collections.has_previous %}
+                        <h1 class="newposts"><a href="?page={{ collections.previous_page_number }}">&lt; Newer posts</a></h1>
+                    {% endif %}
+                </div>
+                <div class="span2">
+                    <span class="current">
+                        <h1>{{ collections.number }}/{{ collections.paginator.num_pages }}</h1>
+                    </span>
+                </div>
+                <div class="span3">
+                    {% if collections.has_next %}
+                        <h1 class="oldposts"><a href="?page={{ collections.next_page_number }}">Older posts &gt;</a></h1>
+                    {% endif %}               
+                </div>
+            </div>
+      </div>
+      
+    <div class="span4 right_col">
+      <div class="about_box">
+          <h2><span class="black">About</span> Apeman Vinyl</h2>
+             {{about.content|safe}}        
+          
+          <h3>Our writers</h3>
+          {% for p in personnel %}
+             <div class="writers_links">
+                  <p><img src="{% if p.bio_pic %}{% thumbnail p.bio_pic 70x70 crop %}{% endif %}" alt="{{ p.nickname }}" />
+                  <a href="/staff/{{p.slug}}/" alt="visit {{ p.nickname }}'s bio"/>{{ p.nickname }}</a></p>
+             </div>
+          {% endfor %}
+          
+          {% include "includes/categories.html" %}
+          
+      </div>
+    </div>
+    
+</div>    
+{% endblock "main" %}
