@@ -38,17 +38,21 @@
                 <h2 class="album_title">{{collection.title}}</h2>
                 <p>by <a href="/staff/{{collection.collection_author.slug}}/">{{collection.collection_author}}</a></p>
                 {{collection.content|safe}}
+                <div class="artwork_preview">
+                    <img src="{% thumbnail artworks.0.artwork 600x400 crop=scale %}" title="{{artworks.0.artist}}">
+                </div>
             </div>
 
 			
 			<div class="review_body">
-				
-                
+
+                <div class="artcollection">
                 {% if artworks %}
                     {% for a in artworks %}
                         <a class="fancybox" rel="group" href="{{MEDIA_URL}}{{a.artwork}}" title="{{a.artist}} - {{a.url}}"><img src="{% thumbnail a.artwork 100x100 crop %}" alt="{{a.artist}}" /></a>
                     {% endfor %}
                 {% endif %}
+                </div>
 			</div>
             <div class="social_buttons">
                 <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[images][0]=http://{{ request.META.HTTP_HOST }}{{MEDIA_URL}}{{playlist.playlist_image}}&amp;p[url]=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}&amp;p[title]={{playlist.title}}&amp;p[summary]={{playlist.content|striptags|safe|truncatechars:100}}">
