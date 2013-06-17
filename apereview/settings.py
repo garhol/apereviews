@@ -154,7 +154,9 @@ TINYMCE_DEFAULT_CONFIG = {
 #'theme_advanced_buttons1': "bold,italic,underline,separator,"
 #    "bullist,separator,outdent,indent,separator,undo,redo",
 #'theme_advanced_buttons2': "",
+'theme_advanced_buttons2_add': "paste,pastetext,pasteword,anchor,",
 'theme_advanced_buttons3': "",
+'plugins': "paste", 
 }
 
 
