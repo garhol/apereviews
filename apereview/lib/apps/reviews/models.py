@@ -55,9 +55,12 @@ class Review(models.Model):
         myclass = "review"
         return myclass
 
-
     def __unicode__(self):
         return self.album
+        
+    def get_absolute_url(self):
+		return "/reviews/%s" % self.slug
+
 
 def pre_rev_save(sender, instance, **kwargs):
     if not instance.spotifylink:

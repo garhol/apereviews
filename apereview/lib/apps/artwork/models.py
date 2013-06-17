@@ -25,9 +25,11 @@ class ArtCollection(models.Model):
         myclass = "artcollection"
         return myclass
 
-
     def __unicode__(self):
         return self.title
+        
+    def get_absolute_url(self):
+		return "/artwork/%s" % self.slug
         
 
 class ArtItem(models.Model):

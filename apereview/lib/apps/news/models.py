@@ -28,7 +28,10 @@ class News(models.Model):
     def get_class(self):
         myclass = "news"
         return myclass
-        
+
+    def get_absolute_url(self):
+		return "/news/%s" % self.slug
+		
     class Meta:
         verbose_name = "Article"
         verbose_name_plural = "Articles"

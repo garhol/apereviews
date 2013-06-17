@@ -39,7 +39,9 @@ class Playlist(models.Model):
     def __unicode__(self):
         return self.title
         
-
+    def get_absolute_url(self):
+		return "/playlists/%s" % self.slug
+		
 class PlaylistItem(models.Model):
     
     artist = models.CharField(max_length=255)
