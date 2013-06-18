@@ -1,3 +1,4 @@
+{% load url from future %}
  <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -90,6 +91,20 @@
     </div>
     
     <footer>
+{% if social_auth.associated %}
+    <p style="color:#fff;">id= {{user.id}}</p>
+    <p style="color:#fff;">user= {{user.username}}</p>
+    <p style="color:#fff;">email= {{user.email}}</p>
+    {% for type, accounts in social_auth.associated.items %}
+        {% for account in accounts %}
+            <p style="color:#fff;">Logged in via {{ account.provider|title }}</a></p>
+            <p style="color:#fff;"><a href="{% url "socialauth_disconnect_individual" account.provider account.id %}">Log out</a></p>
+        {% endfor %}
+    {% endfor %}
+{% else %}
+    <p style="color:#fff;">Login with <a href="{% url "socialauth_begin" "facebook" %}">Facebook</a></p>
+{% endif %}
+
         <p class="follow">Follow us</p>
         <ul class="social clearfix">
             <li><a href="https://www.facebook.com/ApemanVinyl" title="opens in a new window" target="_blank" class="social_icons apeman_fb"><span>Apeman Vinyl on Facebook</span></a></li>
