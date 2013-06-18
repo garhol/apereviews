@@ -103,6 +103,10 @@ ul.social li a.apeman_tumblr{background-position:-92px 0px}
 .header_social{text-align:right; margin-top:35px;}
 .header_social .follow{color:#fff; margin-bottom:5px;}
 
+
+/* Comments */
+.comments_block {margin:1em;}
+
 /* right col */
 
 .right_col{margin-bottom:8em;}

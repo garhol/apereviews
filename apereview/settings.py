@@ -146,7 +146,13 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     #'django.contrib.admindocs',
     'south',
+    'disqus',
 )
+
+
+DISQUS_API_KEY = 'sqErCtNyeD9pOrVMTkPQ9MYg5H4nfOweYAvqx3tA5WX6rALRWxAnws5xGMwN6fWQ'
+DISQUS_WEBSITE_SHORTNAME = 'apemanvinyl'
+SHOW_COMMENTS = True
 
 TINYMCE_DEFAULT_CONFIG = {
 'theme': "advanced",

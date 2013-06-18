@@ -39,6 +39,10 @@
                     <img src="{{STATIC_URL}}img/google_plus_32.png" alt="Share on google plus" />
                 </a>
             </div>
+           <div class="comments_block">
+               {% load disqus_tags %}
+               {% disqus_show_comments %}
+            </div>
                         
         </div>
         
