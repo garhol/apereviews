@@ -28,6 +28,11 @@
 			<div class="review_body">
 				{{article.article|safe}}
 			</div>
+	    <div class="comments" style="margin:1em;">
+		{% load disqus_tags %}
+                {% disqus_show_comments %}
+            </div>
+
             <div class="social_buttons">
                 <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[images][0]=http://{{ request.META.HTTP_HOST }}{{MEDIA_URL}}{{article.promo_image}}&amp;p[url]=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}&amp;p[title]={{article.title}}&amp;p[summary]={{article.article|striptags|safe|truncatechars:100}}">
                     <img src="{{STATIC_URL}}img/facebook_32.png" alt="Share on facebook" />

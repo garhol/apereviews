@@ -151,7 +151,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     #'django.contrib.admindocs',
     'south',
-    'social_auth'
+    'social_auth',
+    'disqus',
 )
 
 TINYMCE_DEFAULT_CONFIG = {
@@ -177,6 +178,9 @@ FACEBOOK_EXTENDED_PERMISSIONS = ['email']
 LOGIN_URL          = '/login-form/'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_ERROR_URL    = '/login-error/'
+
+DISQUS_API_KEY = 'sqErCtNyeD9pOrVMTkPQ9MYg5H4nfOweYAvqx3tA5WX6rALRWxAnws5xGMwN6fWQ'
+DISQUS_WEBSITE_SHORTNAME = 'apemanvinyl'
 
 PREPEND_WWW = True
 
