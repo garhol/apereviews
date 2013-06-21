@@ -72,11 +72,11 @@
                 <div class="navcontainer">
                 {% block "nav" %}
                 <ul class="nav">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/news/">News</a></li>
-                    <li><a href="/reviews/">Reviews</a></li>
-                    <li><a href="/playlists/">Playlists</a></li>
-                    <li><a href="/artwork/">Artwork</a></li>
+                    <li><a {% if request.path == '/' %} class="active"{% endif %} href="/">Home</a></li>
+                    <li><a {% if '/news/' in request.path %} class="active"{% endif %} href="/news/">News</a></li>
+                    <li><a {% if '/reviews/' in request.path %} class="active"{% endif %} href="/reviews/">Reviews</a></li>
+                    <li><a {% if '/playlists/' in request.path %} class="active"{% endif %} href="/playlists/">Playlists</a></li>
+                    <li><a {% if '/artwork/' in request.path %} class="active"{% endif %} href="/artwork/">Artwork</a></li>
                 </ul>
                 {% endblock "nav" %}
                 </div>

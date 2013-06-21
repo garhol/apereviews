@@ -12,7 +12,7 @@
               <div class="review_pod span4 clearfix">
                   <div class="review_image" style='background:url({% if p.playlist_image %}{% thumbnail p.playlist_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                         <div class="review_meta">
-                            <h2 class="album_title">{{p.title}}</h2>
+                            <h2 class="album_title"><a href="/playlists/{{p.slug}}/">{{p.title}}</a></h2>
                             
                             <p>by <a href="/staff/{{p.listauthor.slug}}/">{{p.listauthor}}</a></p>
                         </div>

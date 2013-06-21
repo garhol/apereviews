@@ -13,7 +13,7 @@
               <div class="review_pod span4 clearfix">
                   <div class="review_image" style='background:url({% if c.collection_image %}{% thumbnail c.collection_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                         <div class="review_meta">
-                            <h2 class="album_title">{{c.title}}</h2>
+                            <h2 class="album_title"><a href="/artwork/{{c.slug}}/">{{c.title}}<a/></h2>
                             
                             <p>by <a href="/staff/{{c.collection_author.slug}}/">{{c.collection_author}}</a></p>
                         </div>

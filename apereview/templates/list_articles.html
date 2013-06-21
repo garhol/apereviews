@@ -12,7 +12,7 @@
               <div class="review_pod span4 clearfix">
                   <div class="review_image" style='background:url({% if a.promo_image %}{% thumbnail a.promo_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                         <div class="review_meta">
-                            <h2 class="album_title">{{a.title}}</h2>
+                            <h2 class="album_title"><a href="/news/{{a.slug}}/">{{a.title}}<a/></h2>
                             <p>by <a href="/staff/{{a.reporter.slug}}/">{{a.reporter}}</a></p>
                         </div>
                   </div>
