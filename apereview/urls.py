@@ -7,6 +7,17 @@ from django.conf.urls.static import static
 from django.contrib import admin
 admin.autodiscover()
 
+
+from django.conf.urls.defaults import *
+from apereview.lib.apps.news.api import NewsResource
+from apereview.lib.apps.reviews.api import ReviewResource
+from apereview.lib.apps.playlist.api import PlaylistResource
+from apereview.lib.apps.artwork.api import ArtCollectionResource
+news_resource = NewsResource()
+review_resource = ReviewResource()
+playlist_resource = PlaylistResource()
+artcollection_resource = ArtCollectionResource()
+
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'apereview.lib.apps.home.views.home', name='home'),
@@ -15,6 +26,14 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+)
+
+#api urls
+urlpatterns += patterns('',
+    (r'^api/', include(news_resource.urls)),
+    (r'^api/', include(review_resource.urls)),
+    (r'^api/', include(playlist_resource.urls)),
+    (r'^api/', include(artcollection_resource.urls)),
 )
 
 #reviews urls
