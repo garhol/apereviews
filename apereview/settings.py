@@ -148,12 +148,15 @@ INSTALLED_APPS = (
     'south',
     'disqus',
     'tastypie',
+    'tastypie_swagger',
 )
 
 
 DISQUS_API_KEY = 'sqErCtNyeD9pOrVMTkPQ9MYg5H4nfOweYAvqx3tA5WX6rALRWxAnws5xGMwN6fWQ'
 DISQUS_WEBSITE_SHORTNAME = 'apemanvinyl'
 SHOW_COMMENTS = True
+
+TASTYPIE_SWAGGER_API_MODULE = 'apereview.urls.v1_api'
 
 TINYMCE_DEFAULT_CONFIG = {
 'theme': "advanced",

@@ -9,14 +9,22 @@ admin.autodiscover()
 
 
 from django.conf.urls.defaults import *
+from tastypie.api import Api
 from apereview.lib.apps.news.api import NewsResource
 from apereview.lib.apps.reviews.api import ReviewResource
 from apereview.lib.apps.playlist.api import PlaylistResource
 from apereview.lib.apps.artwork.api import ArtCollectionResource
-news_resource = NewsResource()
-review_resource = ReviewResource()
-playlist_resource = PlaylistResource()
-artcollection_resource = ArtCollectionResource()
+#news_resource = NewsResource()
+#review_resource = ReviewResource()
+#playlist_resource = PlaylistResource()
+#artcollection_resource = ArtCollectionResource()
+
+v1_api = Api(api_name='v1')
+v1_api.register(NewsResource())
+v1_api.register(ReviewResource())
+v1_api.register(PlaylistResource())
+v1_api.register(ArtCollectionResource())
+
 
 urlpatterns = patterns('',
     # Examples:
@@ -30,10 +38,8 @@ urlpatterns = patterns('',
 
 #api urls
 urlpatterns += patterns('',
-    (r'^api/', include(news_resource.urls)),
-    (r'^api/', include(review_resource.urls)),
-    (r'^api/', include(playlist_resource.urls)),
-    (r'^api/', include(artcollection_resource.urls)),
+     (r'^api/', include(v1_api.urls)),
+     url(r'api/doc/', include('tastypie_swagger.urls', namespace='tastypie_swagger')),
 )
 
 #reviews urls
