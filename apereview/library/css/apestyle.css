@@ -91,6 +91,19 @@ ul.nav li a:hover {background-color:#000; color:#185b73;}
   -webkit-font-smoothing: antialiased;
 }
 
+/* pod scoring */
+div.pod_score{background:url(../img/star_rating.png) transparent no-repeat top left; float:left; margin:3px 0px 0px 0.4em; width:114px; height:20px;}
+div.score_1{background-position:0px -198px}
+div.score_2{background-position:0px -176px}
+div.score_3{background-position:0px -154px}
+div.score_4{background-position:0px -132px}
+div.score_5{background-position:0px -110px}
+div.score_6{background-position:0px -88px}
+div.score_7{background-position:0px -66px}
+div.score_8{background-position:0px -44px}
+div.score_9{background-position:0px -22px}
+div.score_10{background-position:0px 0px}
+
 /* social media icons */
 footer .follow{text-align:center; color:#fff; margin-top:1em; position:relative; display:inline-block; width:100%;}
 footer {width: 100%; text-align:center;}
@@ -178,6 +191,12 @@ div.trackrow img {float:right; margin-right:0.5em;}
 .social_buttons{ text-align:center; margin-bottom:1em; margin-right:1em;}
 .social_buttons a:hover{text-decoration:none;}
 /* temporary hacks */
+
+
+/*review star ratings */ 
+div.review_body p {clear:left;}
+div.review_body div.pod_score{ padding-right:30px; width:160px; text-align:right;}
+div.review_body div.pod_score p {margin-top:-5px; font-style:italic;}
 
 /* odd responsive bugfix - losing margin */
 .review_pod, .right_col{padding-top: 0.01em;}

@@ -10,6 +10,12 @@
         <div class="row">
             {% for r in reviews %}
               <div class="review_pod span4 clearfix">
+                   <div class="label_holder clearfix">
+                          {% if r.score %}
+                            <div class="pod_score score_{{r.score}}" ></div>
+                          {% endif %}
+                      </div>
+                      
                   <div class="review_image" style='background:url({% if r.album_image %}{% thumbnail r.album_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                         <div class="review_meta">
                             <h2 class="album_title"><a href="/reviews/{{r.slug}}/">{{r.album}}</a></h2>

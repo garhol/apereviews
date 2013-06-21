@@ -1,5 +1,5 @@
 {% extends "base-templates/base.html" %}
-{% load thumbnail %}
+{% load thumbnail review_filters %}
 
 {% block page_title %}Review ({{review.artist}} -  {{review.album}}){% endblock %}
 {% block meta_desc %}{{review.review|striptags|safe|truncatechars:100}}{% endblock %}
@@ -26,6 +26,11 @@
 			</div>
 			
 			<div class="review_body">
+              {% if review.score %}
+              <div class="pod_score score_{{review.score}}"><p>{{ review.score|apescore }}</p></div>
+              
+              {% endif %}
+
                 {% if review.spotifylink %}
                     <div class="spotplayer"><iframe src="https://embed.spotify.com/?uri={{review.spotifylink}}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe></div>
                 {% endif %}

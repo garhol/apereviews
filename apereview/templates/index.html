@@ -18,6 +18,9 @@
                             <p>Review</p>    
                           </div>
                           <div class="littleblacktriangle"></div>
+                          {% if r.score %}
+                            <div class="pod_score score_{{r.score}}" ></div>
+                          {% endif %}
                       </div>
                       <div class="review_image" style='background:url({% if r.album_image %}{% thumbnail r.album_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                             <div class="review_meta">
