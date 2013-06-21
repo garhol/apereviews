@@ -31,7 +31,7 @@
                 {% endif %}
 				{{review.review|safe}}
                 {% if review.spotifylink %}
-                    <p>Listen now on spotify - <a href="{{review.spotifylink}}">{{review.album}}</a></p>              
+                    <p><a href="{{review.spotifylink}}" alt="{{review.album}}"><img src="{{STATIC_URL}}img/play_spotify.jpg" alt="spotify icon" /></a></p>              
                 {% endif %}
 			</div>
             <div class="social_buttons">

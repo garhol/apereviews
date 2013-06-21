@@ -33,17 +33,15 @@
                {% endif %} 
                {% if tracks %}
                 <h3>Track listing</h3>
-                <ul class="tracklisting">
                 {% for t in tracks %}
-                    <li>{{t.track}} - <em>{{t.artist}}</em>
+                    <div class="trackrow {% cycle 'odd' 'even' %}">{{t.track}} - <em>{{t.artist}}</em>
                     {% if t.spotifylink %}
                         <a href="{{t.spotifylink}}" title="listen to this track on Spotify">
-                            <img src="{{STATIC_URL}}img/spot_icon_small.jpg" alt="spotify icon" />
+                            <img src="{{STATIC_URL}}img/spotty_micro.png" alt="spotify icon" />
                         </a>
                     {% endif %}
-                    </li>
+                    </div>
                 {% endfor %}
-                </ul>
                {% endif %}
 			</div>
             <div class="social_buttons">

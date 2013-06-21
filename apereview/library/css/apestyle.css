@@ -136,6 +136,10 @@ review_page .review_body{margin-bottom:2em;}
 ul.tracklisting{ list-style:none; margin-left:0px;}
 ul.tracklisting li {padding-bottom:0.3em;}
 
+div.trackrow{padding:0.2em; padding-left:1em; height:28px;}
+div.odd{background:#eee;}
+div.trackrow img {float:right; margin-right:0.5em;}
+
 /* artwork pages */
 .review_page .artwork_meta {padding-left:1em; margin-top:10px; clear:left; float:left; padding-right:1em; min-width: 95%;}  
 .artwork_preview{text-align:center; margin-bottom:1em;}
