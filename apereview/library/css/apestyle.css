@@ -52,7 +52,7 @@ ul.nav li a.active{color:#cc1b21;}
 ul.nav li a:hover {background-color:#000; color:#185b73;}
 
 /* review pods */
-.review_pod {margin-top:30px;}
+.review_pod {margin-top:0px;}
 .review_pod .label_holder{margin-top:-30px;}
 .review_pod .label_holder .label_text {background:#000; color:#fff; font-style:italic; padding:0 0.5em 0 0.5em; float:left; height:30px;}
 .review_pod .label_holder .label_text p {margin-bottom:0px;}
@@ -60,6 +60,9 @@ ul.nav li a:hover {background-color:#000; color:#185b73;}
 .review_pod, .right_col{background:#fff; margin-bottom:2em;}
 .review_pod a {color:#}
 .review_pod h2.entry-title a {color:#cc1b21;}
+
+/* margin fix for non front page pods */
+div.review_listing_page .review_pod, div.combo_listing_page .review_pod {margin-top:30px;}
 
 .review_image{height:360px; margin:1em; }
 .review_meta{background:#fff; margin-top:180px; display: inline-block; width:80%; min-height:100px;}
