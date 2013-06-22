@@ -195,8 +195,17 @@ div.trackrow img {float:right; margin-right:0.5em;}
 
 /*review star ratings */ 
 div.review_body p {clear:left;}
-div.review_body div.pod_score{ padding-right:30px; width:160px; text-align:right;}
+div.review_body div.pod_score{width:160px; text-align:right;}
 div.review_body div.pod_score p {margin-top:-5px; font-style:italic;}
+div.review_body div.score_1{width:69px;}
+div.review_body div.score_2{width:69px;}
+div.review_body div.score_3{width:94px;}
+div.review_body div.score_4{width:94px;}
+div.review_body div.score_5{width:112px;}
+div.review_body div.score_6{width:112px;}
+div.review_body div.score_7{width:140px;}
+div.review_body div.score_8{width:140px;}
+
 
 /* odd responsive bugfix - losing margin */
 .review_pod, .right_col{padding-top: 0.01em;}
