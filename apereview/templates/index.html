@@ -25,7 +25,7 @@
                       <div class="review_image" style='background:url({% if r.album_image %}{% thumbnail r.album_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                             <div class="review_meta">
                                 <h2 class="album_title"><a href="/reviews/{{r.slug}}/">{{r.album}}</a></h2>
-                                <h3 class="album_artist">{{r.artist}}</h3>
+                                <h3 class="album_artist"><a href="/artist/{{r.artist|slugify}}/" title="Show all reviews for {{r.artist}}">{{r.artist}}</a></h3>
                                 <p>by <a href="/staff/{{r.reviewer.slug}}/">{{r.reviewer}}</a></p>
                             </div>
                       </div>

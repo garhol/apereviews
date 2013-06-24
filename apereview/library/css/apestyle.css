@@ -70,6 +70,7 @@ div.review_listing_page .review_pod, div.combo_listing_page .review_pod {margin-
 .review_meta h2 a {color:#333;}
 .review_meta h2 a:hover{color:#186798; text-decoration:none;}
 .review_meta h3.album_artist{color:#cc1b21; font: 30px 'LeagueGothicRegular', Arial, sans-serif; margin-top:0px; margin-bottom:0.1em;}
+.review_meta h3.album_artist a{color:#cc1b21; }
 
 .review_body {margin:1em;}
 .review_pod .review_body p {min-height:132px;}
