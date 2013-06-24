@@ -46,6 +46,8 @@ urlpatterns += patterns('',
 urlpatterns += patterns('',
    url(r'^reviews/(?P<review>[\w-]+)/$',
         'apereview.lib.apps.reviews.views.show_review', name="show_review"),
+   url(r'^artist/(?P<artist>[\w-]+)/$',
+        'apereview.lib.apps.reviews.views.list_reviews_by_artist', name="list_by_artist"),
     url(r'^reviews/$',
         'apereview.lib.apps.reviews.views.list_reviews', name="list_reviews"),
 )
