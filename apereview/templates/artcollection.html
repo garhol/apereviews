@@ -55,7 +55,7 @@
                 </div>
 			</div>
             <div class="social_buttons">
-                <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[images][0]=http://{{ request.META.HTTP_HOST }}{{MEDIA_URL}}{{playlist.playlist_image}}&amp;p[url]=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}&amp;p[title]={{playlist.title}}&amp;p[summary]={{playlist.content|striptags|safe|truncatechars:100}}">
+                <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[images][0]=http://{{ request.META.HTTP_HOST }}{{MEDIA_URL}}{{collection.collection_image}}&amp;p[url]=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}&amp;p[title]={{collection.title}}&amp;p[summary]={{collection.content|striptags|safe|truncatechars:100}}">
                     <img src="{{STATIC_URL}}img/facebook_32.png" alt="Share on facebook" />
                 </a>
                 <a target="_blank" href="http://twitter.com/home?status=http://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}">
