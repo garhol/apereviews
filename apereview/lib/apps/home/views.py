@@ -5,6 +5,9 @@ from itertools import chain
 from operator import attrgetter
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
 from apereview.lib.apps.news.models import News
 from apereview.lib.apps.reviews.models import Review
 from apereview.lib.apps.playlist.models import Playlist
@@ -41,3 +44,7 @@ def home(request):
     
     template = 'index.html'
     return render_to_response(template, context, context_instance=RequestContext(request))
+    
+def logout_view(request):
+	 logout(request)
+	 return redirect('/')	

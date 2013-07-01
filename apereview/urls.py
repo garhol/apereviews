@@ -85,6 +85,8 @@ urlpatterns += patterns('',
 #openauth urls
 urlpatterns += patterns('',
     url(r'', include('social_auth.urls')),
+    url(r'^logout/$',
+        'apereview.lib.apps.home.views.logout_view', name="logout"),
 )
 
 if settings.DEBUG:

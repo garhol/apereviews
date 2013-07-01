@@ -98,7 +98,7 @@
     {% for type, accounts in social_auth.associated.items %}
         {% for account in accounts %}
             <p style="color:#fff;">Logged in via {{ account.provider|title }}</a></p>
-            <p style="color:#fff;"><a href="{% url "socialauth_disconnect_individual" account.provider account.id %}">Log out</a></p>
+            <p style="color:#fff;"><a href="/logout/">Log out</a></p>
         {% endfor %}
     {% endfor %}
      <p class="follow">Follow us</p>
