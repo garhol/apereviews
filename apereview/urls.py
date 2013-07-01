@@ -82,6 +82,10 @@ urlpatterns += patterns('',
         'apereview.lib.apps.personnel.views.show_personnel', name="show_staff"),
 )
 
+#openauth urls
+urlpatterns += patterns('',
+    url(r'', include('social_auth.urls')),
+)
 
 if settings.DEBUG:
     urlpatterns += patterns('',

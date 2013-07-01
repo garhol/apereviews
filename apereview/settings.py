@@ -117,7 +117,12 @@ TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
 "django.core.context_processors.static",
 "django.core.context_processors.tz",
 "django.core.context_processors.request",
-"django.contrib.messages.context_processors.messages")
+"django.contrib.messages.context_processors.messages",
+"social_auth.context_processors.social_auth_by_name_backends",
+"social_auth.context_processors.social_auth_backends",
+"social_auth.context_processors.social_auth_by_type_backends",
+"social_auth.context_processors.social_auth_login_redirect",
+)
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, 'templates')
@@ -149,6 +154,7 @@ INSTALLED_APPS = (
     'disqus',
     'tastypie',
     'tastypie_swagger',
+    'social_auth',
 )
 
 
@@ -169,6 +175,18 @@ TINYMCE_DEFAULT_CONFIG = {
 'plugins': "paste", 
 }
 
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.facebook.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+FACEBOOK_APP_ID              = '480810641997337'
+FACEBOOK_API_SECRET          = '50a4de64563dc7c79556eec3e24c95fb'
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+
+LOGIN_URL          = '/login-form/'
+LOGIN_REDIRECT_URL = '/'
+LOGIN_ERROR_URL    = '/login-error/'
 
 PREPEND_WWW = True
 
