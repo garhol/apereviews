@@ -11,6 +11,7 @@
 <meta property="og:image" content="http://{{ request.META.HTTP_HOST }}{{MEDIA_URL}}{{collection.collection_image}}" />
 {% endif %}
 <meta property="og:description" content="{{collection.content|striptags|safe|truncatechars:100}}" />
+<meta property="og:type" content="art collection" />
 {% endblock %}
 
 {% block "css" %}

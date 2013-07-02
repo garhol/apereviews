@@ -86,7 +86,9 @@ urlpatterns += patterns('',
 urlpatterns += patterns('',
     url(r'', include('social_auth.urls')),
     url(r'^logout/$',
-        'apereview.lib.apps.home.views.logout_view', name="logout"),
+        'apereview.lib.apps.login.views.logout_view', name="logout"),
+    url(r'^login/$',
+        'apereview.lib.apps.login.views.login_view', name="login"),
 )
 
 if settings.DEBUG:

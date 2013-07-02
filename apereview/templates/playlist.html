@@ -11,6 +11,7 @@
 <meta property="og:image" content="http://{{ request.META.HTTP_HOST }}{{MEDIA_URL}}{{playlist.playlist_image}}" />
 {% endif %}
 <meta property="og:description" content="{{playlist.content|striptags|safe|truncatechars:100}}" />
+<meta property="og:type" content="playlist" />
 {% endblock %}
 {% block "main" %}
 <div class="row">
