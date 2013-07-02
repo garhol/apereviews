@@ -1,6 +1,10 @@
 {% extends "base-templates/base.html" %}
 {% load url from future %}
 
+<meta name="description" content="{% block meta_desc %}It's the super secret loging page.{% endblock %}">
+<meta name="author" content="{% block meta_content %}garhol{% endblock %}">
+<meta name="keywords" content="{% block keywords %}Apemanvinyl, login, tell no one{% endblock %}">
+    
 {% block "main" %}
 <div class='row'>
 	<section class='span8'>
