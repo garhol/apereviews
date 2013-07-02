@@ -7,8 +7,9 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('garhol', 'garhol@3dahoy.co.uk'),
+    ('garhol', 'chimpoid@gmail.com'),
 )
+SERVER_EMAIL = 'info@apemanvinyl.com'
 
 MANAGERS = ADMINS
 

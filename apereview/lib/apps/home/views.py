@@ -41,3 +41,6 @@ def home(request):
     
     template = 'index.html'
     return render_to_response(template, context, context_instance=RequestContext(request))
+
+def server_error(request):
+    assert 0 , "harmless server error"

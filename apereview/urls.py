@@ -29,6 +29,7 @@ v1_api.register(ArtCollectionResource())
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'apereview.lib.apps.home.views.home', name='home'),
+    url(r'^throw-error/$', 'apereview.lib.apps.home.views.server_error', name="throw-error"),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
