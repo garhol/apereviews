@@ -146,6 +146,7 @@ INSTALLED_APPS = (
     'apereview.lib.apps.home',
     'apereview.lib.apps.about',
     'apereview.lib.apps.pipelines',
+    'apereview.lib.apps.profile',
     'tinymce',
     'easy_thumbnails',
     # Uncomment the next line to enable the admin:

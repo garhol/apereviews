@@ -92,6 +92,12 @@ urlpatterns += patterns('',
         'apereview.lib.apps.login.views.login_view', name="login"),
 )
 
+#profiles
+urlpatterns += patterns('',
+    url(r'^profile/$',
+        'apereview.lib.apps.profile.views.view_profile', name="profile"),
+)
+
 if settings.DEBUG:
     urlpatterns += patterns('',
         url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {

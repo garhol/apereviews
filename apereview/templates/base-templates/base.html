@@ -87,7 +87,13 @@
                         {% else %}
                            {# <a href="/login/">Log in</a> #}
                         {% endif %}
-                        
+                    </li>
+                    <li>
+                        {% if social_auth.associated %}
+                            <a href="/profile/">Profile</a>
+                        {% elif user.is_authenticated %}
+                            <a href="/profile/">Profile</a>
+                        {% endif %}
                     </li>
                     
                     
