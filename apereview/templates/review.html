@@ -1,7 +1,7 @@
 {% extends "base-templates/base.html" %}
 {% load thumbnail review_filters %}
 
-{% block page_title %}Review ({{review.artist}} -  {{review.album}}){% endblock %}
+{% block page_title %}{{review.album}} by {{review.artist}}{% endblock %}
 {% block meta_desc %}{{review.review|striptags|safe|truncatechars:100}}{% endblock %}
 {% block keywords %}{{review.artist}}, {{review.album}}, {{review.tags}} {% endblock %}
 
