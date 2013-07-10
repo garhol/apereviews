@@ -164,7 +164,7 @@ div.trackrow img {float:right; margin-right:0.5em;}
 .review_page .artwork_meta {padding-left:1em; margin-top:10px; clear:left; float:left; padding-right:1em; min-width: 95%;}  
 .artwork_preview{text-align:center; margin-bottom:1em;}
 .artcollection a img{margin:1em;}
-.artcollection {text-align:center;}
+.artcollection {text-align:center;float:left;}
 /* Staff pages */
 .staff_page{background:#fff; margin-bottom:1em;}
 .staff_page .staff_image {margin:0; height:315px;}
