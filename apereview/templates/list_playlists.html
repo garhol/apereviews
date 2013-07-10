@@ -24,22 +24,17 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="row pagination_links">
-                <div class="span3">              
+        <div class="pagination_links clearfix">             
                     {% if playlists.has_previous %}
-                        <h1 class="newposts"><a href="?page={{ playlists.previous_page_number }}">&lt; Newer posts</a></h1>
+                        <p class="newposts"><a href="?page={{ playlists.previous_page_number }}">&lt; Newer posts</a></p>
                     {% endif %}
-                </div>
-                <div class="span2">
-                    <span class="current">
-                        <h1>{{ playlists.number }}/{{ playlists.paginator.num_pages }}</h1>
-                    </span>
-                </div>
-                <div class="span3">
                     {% if playlists.has_next %}
-                        <h1 class="oldposts"><a href="?page={{ playlists.next_page_number }}">Older posts &gt;</a></h1>
+                        <p class="oldposts"><a href="?page={{ playlists.next_page_number }}">Older posts &gt;</a></p>
                     {% endif %}               
-                </div>
+                    <span class="current">
+                        <p>{{ playlists.number }}/{{ playlists.paginator.num_pages }}</p>
+                    </span>
+
             </div>
       </div>
       

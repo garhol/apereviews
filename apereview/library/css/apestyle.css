@@ -188,8 +188,11 @@ div.trackrow img {float:right; margin-right:0.5em;}
     text-align:center;
     }
 
- .pagination_links .newposts{float:left;}
+.pagination_links {color:#fff; font:2.9em 'LeagueGothicRegular', Arial, sans-serif; letter-spacing: 0; margin-top:0.5em;}
+.pagination_links a { font-weight:normal}
+.pagination_links .newposts{float:left;}
 .pagination_links .oldposts{float:right;}
+.pagination_links span.current{display:block; margin-left:auto; margin-right:auto; text-align: center;}
 
 /* social */
 .social_buttons{ text-align:center; margin-bottom:1em; margin-right:1em;}
@@ -231,5 +234,7 @@ h1.tagline{text-align:center; margin-bottom:12px;}
     .review_pod{margin-bottom:3em;}
     h1.tagline{font-size:2em;}
     .right_col {margin-bottom:2em;}
-    .pagination_links h1 {font-size:1.6em;}
+    .pagination_links {font-size:1.6em; margin-top:0px;}
+    .pagination_links span.current{display:none;}
+    .pagination_links span.current{display:none;}    
 }

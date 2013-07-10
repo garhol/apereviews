@@ -95,22 +95,17 @@
             {% endfor %}
         </div>
 
-         <div class="row pagination_links">
-            <div class="span3">              
+         <div class="pagination_links clearfix">
                 {% if reviews.has_previous %}
-                    <h1 class="newposts"><a href="?page={{ reviews.previous_page_number }}">&lt; Newer posts</a></h1>
+                    <p class="newposts"><a href="?page={{ reviews.previous_page_number }}">&lt; Newer posts</a></p>
                 {% endif %}
-            </div>
-            <div class="span2">
-                <span class="current">
-                    <h1>{{ reviews.number }}/{{ reviews.paginator.num_pages }}</h1>
-                </span>
-            </div>
-            <div class="span3">
+
                 {% if reviews.has_next %}
-                    <h1 class="oldposts"><a href="?page={{ reviews.next_page_number }}">Older posts &gt;</a></h1>
+                    <p class="oldposts"><a href="?page={{ reviews.next_page_number }}">Older posts &gt;</a></p>
                 {% endif %}               
-            </div>
+                <span class="current">
+                    <p>{{ reviews.number }}/{{ reviews.paginator.num_pages }}</p>
+                </span>
         </div>
 
     </div>
