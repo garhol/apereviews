@@ -6,7 +6,7 @@
 {% block keywords %}{{collection.collection_author}}, {{collection.title}}, apeman, music, news, {{collection.tags}} {% endblock %}
 
 {% block "extrameta" %} 
-<meta property="og:title" content="News ({{collection.collection_uthor}} -  {{collection.title}})" />
+<meta property="og:title" content="Artwork - {{collection.title}}" />
 {% if playlist.playlist_image %}
 <meta property="og:image" content="http://{{ request.META.HTTP_HOST }}{{MEDIA_URL}}{{collection.collection_image}}" />
 {% endif %}
