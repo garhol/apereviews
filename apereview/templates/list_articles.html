@@ -4,15 +4,18 @@
 {% block page_title %}Welcome{% endblock %}
 
 
+
+
 {% block "main" %}
 <div class="row">  
     <div class="span8">
         <div class="row">
             {% for a in articles %}
+            <section>
               <div class="review_pod span4 clearfix">
                   <div class="review_image" style='background:url({% if a.promo_image %}{% thumbnail a.promo_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                         <div class="review_meta">
-                            <h2 class="album_title"><a href="/news/{{a.slug}}/">{{a.title}}<a/></h2>
+                            <h1 class="album_title"><a href="/news/{{a.slug}}/">{{a.title}}<a/></h1>
                             <p>by <a href="/staff/{{a.reporter.slug}}/">{{a.reporter}}</a></p>
                         </div>
                   </div>
@@ -21,6 +24,7 @@
                     <a class="btn btn-blue more_button" href="/news/{{a.slug}}/">Read more</a> 
                   </div>
                 </div>
+            </section>
             {% endfor %}
         </div>
     

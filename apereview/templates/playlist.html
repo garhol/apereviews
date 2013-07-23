@@ -21,7 +21,7 @@
             <div class="review_date_stamp">{{playlist.date_created|date:"D d M Y"}}</div>
 			<div class="review_image" style='background:url({% if playlist.playlist_banner_image %}{{MEDIA_URL}}{{playlist.playlist_banner_image}}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) #333 no-repeat top center'>
                 <div class="review_meta">
-                    <h2 class="album_title">{{playlist.title}}</h2>
+                    <h1 class="album_title">{{playlist.title}}</h1>
                     <p>by <a href="/staff/{{playlist.listauthor.slug}}/">{{playlist.listauthor}}</a></p>
                 </div>
 			</div>

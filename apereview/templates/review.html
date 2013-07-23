@@ -20,8 +20,8 @@
 			<div class="review_image" style='background:url({% if review.album_banner_image %}{{MEDIA_URL}}{{review.album_banner_image}}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) #333 no-repeat top center'>
 					<div class="review_date_stamp">{{review.date_created|date:"D d M Y"}}</div>
 					<div class="review_meta">
-                        <h2 class="album_title">{{review.album}}</h2>
-                        <h3 class="album_artist">{{review.artist}}</h3>
+                        <h1 class="album_title">{{review.album}}</h1>
+                        <h2 class="album_artist">{{review.artist}}</h2>
                         <p>by <a href="/staff/{{review.reviewer.slug}}/">{{review.reviewer}}</a></p>
                     </div>
 			</div>

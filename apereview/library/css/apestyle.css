@@ -66,11 +66,13 @@ div.review_listing_page .review_pod, div.combo_listing_page .review_pod {margin-
 
 .review_image{height:360px; margin:1em; }
 .review_meta{background:#fff; margin-top:180px; display: inline-block; width:80%; min-height:100px;}
-.review_meta h2.album_title{color:#333; margin-bottom:0.1em;}
-.review_meta h2 a {color:#333;}
-.review_meta h2 a:hover{color:#186798; text-decoration:none;}
-.review_meta h3.album_artist{color:#cc1b21; font: 30px 'LeagueGothicRegular', Arial, sans-serif; margin-top:0px; margin-bottom:0.1em;}
-.review_meta h3.album_artist a{color:#cc1b21; }
+.review_meta h1.album_title{color:#333; margin-bottom:0.1em; font-size:1.9em;}
+.review_meta h1 a {color:#333;}
+.review_meta h1 a:hover{color:#186798; text-decoration:none;}
+.review_meta h2.album_artist{color:#cc1b21; font: 30px 'LeagueGothicRegular', Arial, sans-serif; margin-top:0px; margin-bottom:0.1em;}
+.review_meta h2.album_artist a{color:#cc1b21; }
+
+.artwork_meta h1.artwork_title{color:#cc1b21; margin-bottom:0.1em; font-size:1.9em;} /* artwork pages */
 
 .review_body {margin:1em;}
 .review_pod .review_body p {min-height:132px;}
@@ -171,8 +173,10 @@ div.trackrow img {float:right; margin-right:0.5em;}
 .staff_page .staff_meta {background:#fff; padding-left:1em; display: inline-block; margin-top:170px; clear:left; float:left; width:40%; min-width:190px;} 
 .staff_body {margin:1em;}
 
-.staff_meta h2.album_title{color:#333;}
-.staff_meta h3.album_artist{color:#cc1b21; font: 30px 'LeagueGothicRegular', Arial, sans-serif;}
+.staff_meta h1.album_title{color:#333;font-size:1.9em;}
+.staff_meta h2.album_artist{color:#cc1b21; font: 30px 'LeagueGothicRegular', Arial, sans-serif;}
+
+
 
 .noreviews{margin-left:0.5em; margin-bottom:5em;}
 
@@ -213,6 +217,8 @@ div.review_body div.score_6{width:112px;}
 div.review_body div.score_7{width:140px;}
 div.review_body div.score_8{width:140px;}
 
+
+section{float:left;}
 
 /* odd responsive bugfix - losing margin */
 .review_pod, .right_col{padding-top: 0.01em;}

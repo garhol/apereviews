@@ -12,8 +12,8 @@
             
             <div class="staff_image" style='background:url({% if staff.banner_image %}{{MEDIA_URL}}{{staff.banner_image}}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) #333 no-repeat top center'>
                     <div class="staff_meta">
-                        <h2 class="album_title">{{staff.nickname}}</h2>
-                        <h3 class="album_artist">{{staff.job_title}}</h3>
+                        <h1 class="album_title">{{staff.nickname}}</h1>
+                        <h2 class="album_artist">{{staff.job_title}}</h2>
                     </div>
             </div>
             
@@ -26,6 +26,7 @@
         <div class="row">
             {% if reviews %}
                 {% for r in reviews %}
+                <section>
                     {% if r.get_class == "review" %}
                       <div class="review_pod span4 clearfix">
                           <div class="label_holder clearfix">
@@ -107,11 +108,14 @@
                       </div>
                     </div>
                 {% endif  %}
+                    </section>
                 {% endfor %}
-            {% else %}     
-                <div class="review_pod span4">   
-                    <h2 class="noreviews">No reviews yet</h2>
-                </div>
+            {% else %}    
+                <section> 
+                    <div class="review_pod span4">   
+                        <h1 class="noreviews">No reviews yet</h1>
+                    </div>
+                </section>
             {% endif %}        
         </div>
         

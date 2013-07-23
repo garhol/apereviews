@@ -11,6 +11,7 @@
     <div class="span8">
         <div class="row">
             {% for r in reviews %}
+            <section>
                 {% if r.get_class == "review" %}
                   <div class="review_pod span4 clearfix">
                       <div class="label_holder clearfix">
@@ -24,8 +25,8 @@
                       </div>
                       <div class="review_image" style='background:url({% if r.album_image %}{% thumbnail r.album_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                             <div class="review_meta">
-                                <h2 class="album_title"><a href="/reviews/{{r.slug}}/">{{r.album}}</a></h2>
-                                <h3 class="album_artist"><a href="/artist/{{r.artist|slugify}}/" title="Show all reviews for {{r.artist}}">{{r.artist}}</a></h3>
+                                <h1 class="album_title"><a href="/reviews/{{r.slug}}/">{{r.album}}</a></h1>
+                                <h2 class="album_artist"><a href="/artist/{{r.artist|slugify}}/" title="Show all reviews for {{r.artist}}">{{r.artist}}</a></h2>
                                 <p>by <a href="/staff/{{r.reviewer.slug}}/">{{r.reviewer}}</a></p>
                             </div>
                       </div>
@@ -44,7 +45,7 @@
                       </div>
                       <div class="review_image" style='background:url({% if r.promo_image %}{% thumbnail r.promo_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                             <div class="review_meta">
-                                <h2 class="album_title"><a href="/news/{{r.slug}}/">{{r.title}}</a></h2>
+                                <h1 class="album_title"><a href="/news/{{r.slug}}/">{{r.title}}</a></h1>
                                 <p>by <a href="/staff/{{r.reporter.slug}}/">{{r.reporter}}</a></p>
                             </div>
                       </div>
@@ -63,7 +64,7 @@
                       </div>
                       <div class="review_image" style='background:url({% if r.playlist_image %}{% thumbnail r.playlist_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                             <div class="review_meta">
-                                <h2 class="album_title"><a href="/playlists/{{r.slug}}/">{{r.title}}</a></h2>
+                                <h1 class="album_title"><a href="/playlists/{{r.slug}}/">{{r.title}}</a></h1>
                                 <p>by <a href="/staff/{{r.listauthor.slug}}/">{{r.listauthor}}</a></p>
                             </div>
                       </div>
@@ -82,7 +83,7 @@
                       </div>
                       <div class="review_image" style='background:url({% if r.collection_image %}{% thumbnail r.collection_image 360x360 crop %}{% else %}{{STATIC_URL}}img/no_cover.png{% endif %}) no-repeat top center; background-size:cover;'>
                             <div class="review_meta">
-                                <h2 class="album_title"><a href="/artwork/{{r.slug}}/">{{r.title}}</a></h2>
+                                <h1 class="album_title"><a href="/artwork/{{r.slug}}/">{{r.title}}</a></h1>
                                 <p>by <a href="/staff/{{r.collection_author.slug}}/">{{r.collection_author}}</a></p>
                             </div>
                       </div>
@@ -92,6 +93,7 @@
                       </div>
                     </div>
                 {% endif  %}
+                </section>
             {% endfor %}
         </div>
 
